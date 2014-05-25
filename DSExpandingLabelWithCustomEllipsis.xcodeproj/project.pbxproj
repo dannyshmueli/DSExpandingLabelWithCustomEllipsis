@@ -21,6 +21,8 @@
 		3069415F19325F07005EAD9D /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3069414119325F07005EAD9D /* UIKit.framework */; };
 		3069416719325F07005EAD9D /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 3069416519325F07005EAD9D /* InfoPlist.strings */; };
 		3069416919325F07005EAD9D /* DSExpandingLabelWithCustomEllipsisTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3069416819325F07005EAD9D /* DSExpandingLabelWithCustomEllipsisTests.m */; };
+		3069417519325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.m in Sources */ = {isa = PBXBuildFile; fileRef = 3069417419325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.m */; };
+		30694178193263F7005EAD9D /* NSAttributedString+NumberOfLines.m in Sources */ = {isa = PBXBuildFile; fileRef = 30694177193263F7005EAD9D /* NSAttributedString+NumberOfLines.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +55,10 @@
 		3069416419325F07005EAD9D /* DSExpandingLabelWithCustomEllipsisTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DSExpandingLabelWithCustomEllipsisTests-Info.plist"; sourceTree = "<group>"; };
 		3069416619325F07005EAD9D /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		3069416819325F07005EAD9D /* DSExpandingLabelWithCustomEllipsisTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DSExpandingLabelWithCustomEllipsisTests.m; sourceTree = "<group>"; };
+		3069417319325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSExpandingLabelWithCustomEllipsis.h; sourceTree = "<group>"; };
+		3069417419325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSExpandingLabelWithCustomEllipsis.m; sourceTree = "<group>"; };
+		30694176193263F7005EAD9D /* NSAttributedString+NumberOfLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+NumberOfLines.h"; sourceTree = "<group>"; };
+		30694177193263F7005EAD9D /* NSAttributedString+NumberOfLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+NumberOfLines.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +118,7 @@
 		3069414319325F07005EAD9D /* DSExpandingLabelWithCustomEllipsis */ = {
 			isa = PBXGroup;
 			children = (
+				3069417219325F8D005EAD9D /* ExpandingLabelWithCustomEllipsis */,
 				3069414C19325F07005EAD9D /* AppDelegate.h */,
 				3069414D19325F07005EAD9D /* AppDelegate.m */,
 				3069414F19325F07005EAD9D /* Main.storyboard */,
@@ -150,6 +157,17 @@
 				3069416519325F07005EAD9D /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3069417219325F8D005EAD9D /* ExpandingLabelWithCustomEllipsis */ = {
+			isa = PBXGroup;
+			children = (
+				3069417319325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.h */,
+				3069417419325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.m */,
+				30694176193263F7005EAD9D /* NSAttributedString+NumberOfLines.h */,
+				30694177193263F7005EAD9D /* NSAttributedString+NumberOfLines.m */,
+			);
+			path = ExpandingLabelWithCustomEllipsis;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,6 +267,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3069417519325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.m in Sources */,
+				30694178193263F7005EAD9D /* NSAttributedString+NumberOfLines.m in Sources */,
 				3069415419325F07005EAD9D /* ViewController.m in Sources */,
 				3069414E19325F07005EAD9D /* AppDelegate.m in Sources */,
 				3069414A19325F07005EAD9D /* main.m in Sources */,
