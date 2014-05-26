@@ -26,8 +26,6 @@
 
 -(void)setTruncatingForNumberOfLines:(int)lines
 {
-    BOOL isAutoLayout = self.translatesAutoresizingMaskIntoConstraints;
-    
     self.fullText = self.attributedText;
     
     NSAttributedString *ellipsis = self.customEllipsisAttributedText ? self.customEllipsisAttributedText : [[NSAttributedString alloc] initWithString: @""];
