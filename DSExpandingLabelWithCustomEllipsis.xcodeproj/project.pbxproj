@@ -118,14 +118,14 @@
 		3069414319325F07005EAD9D /* DSExpandingLabelWithCustomEllipsis */ = {
 			isa = PBXGroup;
 			children = (
-				3069417219325F8D005EAD9D /* ExpandingLabelWithCustomEllipsis */,
 				3069414C19325F07005EAD9D /* AppDelegate.h */,
 				3069414D19325F07005EAD9D /* AppDelegate.m */,
+				3069417219325F8D005EAD9D /* ExpandingLabelWithCustomEllipsis */,
+				3069415519325F07005EAD9D /* Images.xcassets */,
 				3069414F19325F07005EAD9D /* Main.storyboard */,
+				3069414419325F07005EAD9D /* Supporting Files */,
 				3069415219325F07005EAD9D /* ViewController.h */,
 				3069415319325F07005EAD9D /* ViewController.m */,
-				3069415519325F07005EAD9D /* Images.xcassets */,
-				3069414419325F07005EAD9D /* Supporting Files */,
 			);
 			path = DSExpandingLabelWithCustomEllipsis;
 			sourceTree = "<group>";
