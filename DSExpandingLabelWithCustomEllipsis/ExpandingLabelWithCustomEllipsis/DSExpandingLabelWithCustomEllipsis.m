@@ -8,6 +8,7 @@
 
 #import "DSExpandingLabelWithCustomEllipsis.h"
 #import "NSAttributedString+NumberOfLines.h"
+#import "DSAttributedStringTrunctor.h"
 
 @interface DSExpandingLabelWithCustomEllipsis ()
 
@@ -32,17 +33,18 @@ NSString *const kDSDefaultEllipsis = @"...More";
     
     NSAttributedString *ellipsis = self.customEllipsisAttributedText ? self.customEllipsisAttributedText : [[NSAttributedString alloc] initWithString: kDSDefaultEllipsis];
     
+    //store full text for expanding later
     self.fullText = self.attributedText;
-
+    
     self.oneLineHeight = [self.fullText heightOfOneLine];
     
-    NSAttributedString *truncatedString = [self trunctate:self.fullText ellipses:ellipsis numberOfNeededLines:lines];
+    DSAttributedStringTrunctor *truncator = [DSAttributedStringTrunctor new];
+    NSAttributedString *truncatedString  = [truncator trunctate:self.fullText
+                                                       withSize:self.verticalExpandingsizeConstraint
+                                                       withEllipses:ellipsis
+                                            numberOfNeededLines:lines
+                                                  oneLineHeight:self.oneLineHeight];
     
-    truncatedString = [self addToStringUntilLineIsFull:truncatedString ellipses:ellipsis numberOfNeededLines:lines];
-    
-    //add ellipsis
-    truncatedString =[self string:truncatedString withElipses:ellipsis];
-
     //resize label
     CGRect labelFrame = self.frame;
     labelFrame.size.height = self.oneLineHeight * lines;
@@ -55,60 +57,6 @@ NSString *const kDSDefaultEllipsis = @"...More";
     self.userInteractionEnabled = YES;
     UITapGestureRecognizer *tapper = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(expand:)];
     [self addGestureRecognizer:tapper];
-}
-
-//this will trim the text to fit 2 lines.
-//using binary search (line in the desert)
--(NSAttributedString *)trunctate:(NSAttributedString *)stringToTruncate ellipses:(NSAttributedString *)ellipsis numberOfNeededLines:(int)wantedNumberOfLines
-{
-    int numberOfLinesForCurrentString = [self numberOfLinesForString:stringToTruncate withEllipsis:ellipsis];
-    
-    if (numberOfLinesForCurrentString > wantedNumberOfLines)
-    {
-        //split by half
-        stringToTruncate = [stringToTruncate attributedSubstringFromRange:NSMakeRange(0, stringToTruncate.length / 2)];
-     return [self trunctate:stringToTruncate ellipses:ellipsis numberOfNeededLines:wantedNumberOfLines];
-    }
-    return stringToTruncate;
-}
-
-//this will return expanded text to make up full line including the ellipsis
--(NSAttributedString *)addToStringUntilLineIsFull:(NSAttributedString *)stringToExpand ellipses:(NSAttributedString *)ellipsis numberOfNeededLines:(int)wantedNumberOfLines
-{
-    int numberOfLinesForCurrentString = [self numberOfLinesForString:stringToExpand withEllipsis:ellipsis];
-    
-    //we always call this method when we are already less or equal from wantedLines
-    if (numberOfLinesForCurrentString > wantedNumberOfLines)
-    {
-        NSMutableAttributedString *toLongString = [[NSMutableAttributedString alloc] initWithAttributedString:stringToExpand];
-        [toLongString deleteCharactersInRange:NSMakeRange(toLongString.length-2 , 2)];
-        return toLongString;
-    }
-    else //we are now short of lines and maybe need to add letters
-    {
-        NSMutableAttributedString *toShortString = [[NSMutableAttributedString alloc] initWithAttributedString:stringToExpand];
-        NSAttributedString *stringToInsert = [self.fullText attributedSubstringFromRange:NSMakeRange(toShortString.length, 1)];
-        [toShortString appendAttributedString:stringToInsert];
-        
-        return [self addToStringUntilLineIsFull:toShortString ellipses:ellipsis numberOfNeededLines:wantedNumberOfLines];
-    }
-}
-
-#pragma mark - Helpers
-
--(int)numberOfLinesForString:(NSAttributedString *)string withEllipsis:(NSAttributedString *)ellipses
-{
-    NSAttributedString *stringToExpandWithEllipsis = [self string:string withElipses:ellipses];
-    
-    int numberOfLinesForCurrentString = [stringToExpandWithEllipsis numberOfLinesNeededWithSize:self.verticalExpandingsizeConstraint oneLineHeight:self.oneLineHeight];
-    return numberOfLinesForCurrentString;
-}
-
--(NSAttributedString *)string:(NSAttributedString *)string withElipses:(NSAttributedString *)ellipses
-{
-    NSMutableAttributedString *stringToExpandWithEllipsis = [[NSMutableAttributedString alloc] initWithAttributedString:string];
-    [stringToExpandWithEllipsis appendAttributedString:ellipses];
-    return stringToExpandWithEllipsis;
 }
 
 #pragma mark - Button Handler

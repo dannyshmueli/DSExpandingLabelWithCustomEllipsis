@@ -23,6 +23,7 @@
 		3069416919325F07005EAD9D /* DSExpandingLabelWithCustomEllipsisTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3069416819325F07005EAD9D /* DSExpandingLabelWithCustomEllipsisTests.m */; };
 		3069417519325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.m in Sources */ = {isa = PBXBuildFile; fileRef = 3069417419325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.m */; };
 		30694178193263F7005EAD9D /* NSAttributedString+NumberOfLines.m in Sources */ = {isa = PBXBuildFile; fileRef = 30694177193263F7005EAD9D /* NSAttributedString+NumberOfLines.m */; };
+		30D7AD8A1937B0D70031F5C8 /* DSAttributedStringTrunctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D7AD891937B0D70031F5C8 /* DSAttributedStringTrunctor.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,8 @@
 		3069417419325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSExpandingLabelWithCustomEllipsis.m; sourceTree = "<group>"; };
 		30694176193263F7005EAD9D /* NSAttributedString+NumberOfLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+NumberOfLines.h"; sourceTree = "<group>"; };
 		30694177193263F7005EAD9D /* NSAttributedString+NumberOfLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+NumberOfLines.m"; sourceTree = "<group>"; };
+		30D7AD881937B0D70031F5C8 /* DSAttributedStringTrunctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSAttributedStringTrunctor.h; sourceTree = "<group>"; };
+		30D7AD891937B0D70031F5C8 /* DSAttributedStringTrunctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSAttributedStringTrunctor.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +165,8 @@
 		3069417219325F8D005EAD9D /* ExpandingLabelWithCustomEllipsis */ = {
 			isa = PBXGroup;
 			children = (
+				30D7AD881937B0D70031F5C8 /* DSAttributedStringTrunctor.h */,
+				30D7AD891937B0D70031F5C8 /* DSAttributedStringTrunctor.m */,
 				3069417319325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.h */,
 				3069417419325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.m */,
 				30694176193263F7005EAD9D /* NSAttributedString+NumberOfLines.h */,
@@ -267,6 +272,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30D7AD8A1937B0D70031F5C8 /* DSAttributedStringTrunctor.m in Sources */,
 				3069417519325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.m in Sources */,
 				30694178193263F7005EAD9D /* NSAttributedString+NumberOfLines.m in Sources */,
 				3069415419325F07005EAD9D /* ViewController.m in Sources */,
@@ -476,6 +482,7 @@
 				3069416E19325F07005EAD9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		3069416F19325F07005EAD9D /* Build configuration list for PBXNativeTarget "DSExpandingLabelWithCustomEllipsisTests" */ = {
 			isa = XCConfigurationList;
@@ -484,6 +491,7 @@
 				3069417119325F07005EAD9D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
