@@ -24,10 +24,7 @@
     float totalHeight = [self boundingRectWithSize:sizeConstraint
                                                      options:NSStringDrawingUsesLineFragmentOrigin
                                                      context:NULL].size.height;
-    int numberOfLines = nearbyint(totalHeight/oneLineHeight);
-    NSLog(@"number of line needed: %i", numberOfLines);
-    return numberOfLines;
+    return nearbyint(totalHeight/oneLineHeight);
 }
-
 
 @end
