@@ -9,6 +9,7 @@
 #import "DSAttributedStringTrunctor.h"
 
 #import "DSAttributedString+NumberOfLines.h"
+#import "NSAttributedString+SimpleAddDelete.h"
 
 @interface DSAttributedStringTrunctor ()
 
@@ -34,11 +35,11 @@
     
     truncatedString = [self addToStringUntilLineIsFull:truncatedString ellipses:ellipsis numberOfNeededLines:wantedNumberOfLines];
     
-    //Delet one more to fit into label
-    truncatedString = [self string:truncatedString deleteFromEndNumberOfChars:1];
+    //Delet one more char to fit into label
+    truncatedString = [truncatedString deleteFromEndNumberOfChars:1];
     
     //add ellipsis
-    truncatedString =[self string:truncatedString withElipses:ellipsis];
+    truncatedString =[truncatedString attributtedStringByAppendAttributtedString:ellipsis];
     
     return truncatedString;
 }
@@ -67,40 +68,27 @@
     //we always call this method when we are already less or equal from wantedLines
     if (numberOfLinesForCurrentString > wantedNumberOfLines)
     {
-        return [self string:stringToExpand deleteFromEndNumberOfChars:1];
+        return [stringToExpand deleteFromEndNumberOfChars:1];
     }
     else //we are now short of lines and maybe need to add letters
     {
-        NSMutableAttributedString *toShortString = [[NSMutableAttributedString alloc] initWithAttributedString:stringToExpand];
-        NSAttributedString *stringToInsert = [self.fullText attributedSubstringFromRange:NSMakeRange(toShortString.length, 1)];
-        [toShortString appendAttributedString:stringToInsert];
         
+        NSAttributedString *stringToInsert = [self.fullText attributedSubstringFromRange:NSMakeRange(stringToExpand.length, 1)];
+        NSAttributedString *toShortString = [stringToExpand attributtedStringByAppendAttributtedString:stringToInsert];
+
         return [self addToStringUntilLineIsFull:toShortString ellipses:ellipsis numberOfNeededLines:wantedNumberOfLines];
     }
-}
-
--(NSAttributedString *)string:(NSAttributedString *)string deleteFromEndNumberOfChars:(int)numberOfCharsToDelete
-{
-    NSMutableAttributedString *toLongString = [[NSMutableAttributedString alloc] initWithAttributedString:string];
-    [toLongString deleteCharactersInRange:NSMakeRange(toLongString.length-numberOfCharsToDelete , numberOfCharsToDelete)];
-    return toLongString;
 }
 
 #pragma mark - Helpers
 
 -(int)numberOfLinesForString:(NSAttributedString *)string withEllipsis:(NSAttributedString *)ellipses
 {
-    NSAttributedString *stringToExpandWithEllipsis = [self string:string withElipses:ellipses];
+    NSAttributedString *stringToExpandWithEllipsis = [string attributtedStringByAppendAttributtedString:ellipses];
     
     int numberOfLinesForCurrentString = [stringToExpandWithEllipsis numberOfLinesNeededWithSize:self.verticalExpandingsizeConstraint oneLineHeight:self.oneLineHeight];
     return numberOfLinesForCurrentString;
 }
 
--(NSAttributedString *)string:(NSAttributedString *)string withElipses:(NSAttributedString *)ellipses
-{
-    NSMutableAttributedString *stringToExpandWithEllipsis = [[NSMutableAttributedString alloc] initWithAttributedString:string];
-    [stringToExpandWithEllipsis appendAttributedString:ellipses];
-    return stringToExpandWithEllipsis;
-}
 
 @end

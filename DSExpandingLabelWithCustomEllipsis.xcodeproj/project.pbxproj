@@ -23,6 +23,7 @@
 		3069416919325F07005EAD9D /* DSAttributedStringTrunctorTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 3069416819325F07005EAD9D /* DSAttributedStringTrunctorTests.m */; };
 		3069417519325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.m in Sources */ = {isa = PBXBuildFile; fileRef = 3069417419325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.m */; };
 		30694178193263F7005EAD9D /* DSAttributedString+NumberOfLines.m in Sources */ = {isa = PBXBuildFile; fileRef = 30694177193263F7005EAD9D /* DSAttributedString+NumberOfLines.m */; };
+		307B8C1D1938F9B10066C18B /* NSAttributedString+SimpleAddDelete.m in Sources */ = {isa = PBXBuildFile; fileRef = 307B8C1C1938F9B10066C18B /* NSAttributedString+SimpleAddDelete.m */; };
 		30D7AD8A1937B0D70031F5C8 /* DSAttributedStringTrunctor.m in Sources */ = {isa = PBXBuildFile; fileRef = 30D7AD891937B0D70031F5C8 /* DSAttributedStringTrunctor.m */; };
 		3A969240861448D4A4F395C1 /* libPods-DSExpandingLabelWithCustomEllipsisTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F451AB7658A24C60BAEB8F94 /* libPods-DSExpandingLabelWithCustomEllipsisTests.a */; };
 /* End PBXBuildFile section */
@@ -61,6 +62,8 @@
 		3069417419325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSExpandingLabelWithCustomEllipsis.m; sourceTree = "<group>"; };
 		30694176193263F7005EAD9D /* DSAttributedString+NumberOfLines.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "DSAttributedString+NumberOfLines.h"; sourceTree = "<group>"; };
 		30694177193263F7005EAD9D /* DSAttributedString+NumberOfLines.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "DSAttributedString+NumberOfLines.m"; sourceTree = "<group>"; };
+		307B8C1B1938F9B10066C18B /* NSAttributedString+SimpleAddDelete.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSAttributedString+SimpleAddDelete.h"; sourceTree = "<group>"; };
+		307B8C1C1938F9B10066C18B /* NSAttributedString+SimpleAddDelete.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "NSAttributedString+SimpleAddDelete.m"; sourceTree = "<group>"; };
 		30D7AD881937B0D70031F5C8 /* DSAttributedStringTrunctor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DSAttributedStringTrunctor.h; sourceTree = "<group>"; };
 		30D7AD891937B0D70031F5C8 /* DSAttributedStringTrunctor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DSAttributedStringTrunctor.m; sourceTree = "<group>"; };
 		9AE5B813B6834CE88EBA0119 /* Pods-DSExpandingLabelWithCustomEllipsisTests.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DSExpandingLabelWithCustomEllipsisTests.xcconfig"; path = "Pods/Pods-DSExpandingLabelWithCustomEllipsisTests.xcconfig"; sourceTree = "<group>"; };
@@ -175,10 +178,20 @@
 				30D7AD891937B0D70031F5C8 /* DSAttributedStringTrunctor.m */,
 				3069417319325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.h */,
 				3069417419325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.m */,
-				30694176193263F7005EAD9D /* DSAttributedString+NumberOfLines.h */,
-				30694177193263F7005EAD9D /* DSAttributedString+NumberOfLines.m */,
+				307B8C1A1938F9730066C18B /* Extensions */,
 			);
 			path = ExpandingLabelWithCustomEllipsis;
+			sourceTree = "<group>";
+		};
+		307B8C1A1938F9730066C18B /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				30694176193263F7005EAD9D /* DSAttributedString+NumberOfLines.h */,
+				30694177193263F7005EAD9D /* DSAttributedString+NumberOfLines.m */,
+				307B8C1B1938F9B10066C18B /* NSAttributedString+SimpleAddDelete.h */,
+				307B8C1C1938F9B10066C18B /* NSAttributedString+SimpleAddDelete.m */,
+			);
+			name = Extensions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -313,6 +326,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				307B8C1D1938F9B10066C18B /* NSAttributedString+SimpleAddDelete.m in Sources */,
 				30D7AD8A1937B0D70031F5C8 /* DSAttributedStringTrunctor.m in Sources */,
 				3069417519325F8D005EAD9D /* DSExpandingLabelWithCustomEllipsis.m in Sources */,
 				30694178193263F7005EAD9D /* DSAttributedString+NumberOfLines.m in Sources */,
