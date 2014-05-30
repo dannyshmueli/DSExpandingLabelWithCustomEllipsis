@@ -27,7 +27,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <connections>
-                        <outlet property="myExpandLabel" destination="hr5-aD-r5V" id="BPp-sE-fjl"/>
+                        <outlet property="myExpandingLabel" destination="hr5-aD-r5V" id="RYO-eB-194"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>

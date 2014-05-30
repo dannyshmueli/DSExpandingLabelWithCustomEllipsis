@@ -10,7 +10,7 @@
 #import "DSExpandingLabelWithCustomEllipsis.h"
 
 @interface ViewController ()
-@property (weak, nonatomic) IBOutlet DSExpandingLabelWithCustomEllipsis *myExpandLabel;
+@property (weak, nonatomic) IBOutlet DSExpandingLabelWithCustomEllipsis *myExpandingLabel;
 
 @end
 
@@ -19,20 +19,20 @@
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    NSAttributedString *loremIpsum = [[NSAttributedString alloc] initWithString: @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod tortor neque, id iaculis risus fermentum et. Donec vulputate, lectus sit amet venenatis mattis, tellus diam volutpat purus, suscipit ultricies leo massa nec massa. Suspendisse imperdiet sit amet sem vel porta. Phasellus accumsan felis vitae nulla consectetur, vehicula" attributes:@{NSFontAttributeName: self.myExpandLabel.font}];
+    NSAttributedString *loremIpsum = [[NSAttributedString alloc] initWithString: @"Lorem ipsum dolor sit amet, consectetur adipiscing elit. In euismod tortor neque, id iaculis risus fermentum et. Donec vulputate, lectus sit amet venenatis mattis, tellus diam volutpat purus, suscipit ultricies leo massa nec massa. Suspendisse imperdiet sit amet sem vel porta. Phasellus accumsan felis vitae nulla consectetur, vehicula" attributes:@{NSFontAttributeName: self.myExpandingLabel.font}];
     
 	NSMutableAttributedString *customEllipsis = [[NSMutableAttributedString alloc] initWithString:@"!!!More"];
     [customEllipsis addAttribute:NSFontAttributeName
-                           value:[UIFont boldSystemFontOfSize:self.myExpandLabel.font.pointSize]
+                           value:[UIFont boldSystemFontOfSize:self.myExpandingLabel.font.pointSize]
                            range:NSMakeRange(3, 4)];
     
     
-    self.myExpandLabel.customEllipsisAttributedText = customEllipsis;
-    self.myExpandLabel.attributedText = loremIpsum;
-    self.myExpandLabel.didExpandBlock = ^(){
+    self.myExpandingLabel.customEllipsisAttributedText = customEllipsis;
+    self.myExpandingLabel.attributedText = loremIpsum;
+    self.myExpandingLabel.didExpandBlock = ^(){
         NSLog(@"did tap label");
     };
-    [self.myExpandLabel setTruncatingForNumberOfLines:2];
+    [self.myExpandingLabel setTruncatingForNumberOfLines:2];
 }
 
 - (void)didReceiveMemoryWarning
