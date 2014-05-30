@@ -3,10 +3,6 @@ DSExpandingLabelWithCustomEllipsis
 
 iOS UILabel subclass that replace the ellipses with any NSAttributtedString
 
-
-![Screenshot](http://i.imgur.com/FeErdpC.png?raw=true =100x100)
-![Screenshot](http://i.imgur.com/PPkup3u.png?raw=true)
- 
  Shrinked Label:
  
 <img src="http://i.imgur.com/FeErdpC.png?raw=true" 
