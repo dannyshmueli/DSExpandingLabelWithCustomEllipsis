@@ -34,6 +34,9 @@
     
     truncatedString = [self addToStringUntilLineIsFull:truncatedString ellipses:ellipsis numberOfNeededLines:wantedNumberOfLines];
     
+    //Delet one more to fit into label
+    truncatedString = [self string:truncatedString deleteFromEndNumberOfChars:1];
+    
     //add ellipsis
     truncatedString =[self string:truncatedString withElipses:ellipsis];
     
@@ -64,9 +67,7 @@
     //we always call this method when we are already less or equal from wantedLines
     if (numberOfLinesForCurrentString > wantedNumberOfLines)
     {
-        NSMutableAttributedString *toLongString = [[NSMutableAttributedString alloc] initWithAttributedString:stringToExpand];
-        [toLongString deleteCharactersInRange:NSMakeRange(toLongString.length-2 , 2)];
-        return toLongString;
+        return [self string:stringToExpand deleteFromEndNumberOfChars:1];
     }
     else //we are now short of lines and maybe need to add letters
     {
@@ -78,6 +79,12 @@
     }
 }
 
+-(NSAttributedString *)string:(NSAttributedString *)string deleteFromEndNumberOfChars:(int)numberOfCharsToDelete
+{
+    NSMutableAttributedString *toLongString = [[NSMutableAttributedString alloc] initWithAttributedString:string];
+    [toLongString deleteCharactersInRange:NSMakeRange(toLongString.length-numberOfCharsToDelete , numberOfCharsToDelete)];
+    return toLongString;
+}
 
 #pragma mark - Helpers
 
