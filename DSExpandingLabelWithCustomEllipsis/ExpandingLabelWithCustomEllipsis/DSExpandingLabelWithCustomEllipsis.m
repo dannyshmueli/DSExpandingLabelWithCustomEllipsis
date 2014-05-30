@@ -15,6 +15,7 @@
 @property (nonatomic, copy) NSAttributedString *fullText;
 @property (nonatomic, readonly) CGSize verticalExpandingsizeConstraint;
 @property (nonatomic) CGFloat oneLineHeight;
+
 @end
 
 @implementation DSExpandingLabelWithCustomEllipsis
