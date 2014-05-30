@@ -6,7 +6,7 @@
 //  Copyright (c) 2014 Danny Shmueli. All rights reserved.
 //
 
-#import "NSAttributedString+NumberOfLines.h"
+#import "DSAttributedString+NumberOfLines.h"
 
 @implementation NSAttributedString (NumberOfLines)
 

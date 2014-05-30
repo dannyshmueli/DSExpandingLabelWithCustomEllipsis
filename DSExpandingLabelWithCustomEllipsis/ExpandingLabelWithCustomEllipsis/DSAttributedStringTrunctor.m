@@ -8,7 +8,7 @@
 
 #import "DSAttributedStringTrunctor.h"
 
-#import "NSAttributedString+NumberOfLines.h"
+#import "DSAttributedString+NumberOfLines.h"
 
 @interface DSAttributedStringTrunctor ()
 

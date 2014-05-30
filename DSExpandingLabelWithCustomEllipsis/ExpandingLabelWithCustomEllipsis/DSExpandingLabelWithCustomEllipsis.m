@@ -7,7 +7,7 @@
 //
 
 #import "DSExpandingLabelWithCustomEllipsis.h"
-#import "NSAttributedString+NumberOfLines.h"
+#import "DSAttributedString+NumberOfLines.h"
 #import "DSAttributedStringTrunctor.h"
 
 @interface DSExpandingLabelWithCustomEllipsis ()
