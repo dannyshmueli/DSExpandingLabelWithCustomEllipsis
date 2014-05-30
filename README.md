@@ -3,5 +3,7 @@ DSExpandingLabelWithCustomEllipsis
 
 iOS UILabel subclass that replace the ellipses with any NSAttributtedString
 
-[Imgur](http://i.imgur.com/FeErdpC.png)
-[Imgur](http://i.imgur.com/PPkup3u.png)
+
+![Screenshot](http://i.imgur.com/FeErdpC.png?raw=true)
+![Screenshot](http://i.imgur.com/PPkup3u.png?raw=true)
+ 
