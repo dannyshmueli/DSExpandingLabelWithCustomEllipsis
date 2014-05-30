@@ -64,6 +64,8 @@ NSString *const kDSDefaultEllipsis = @"...More";
 
 -(void)expand:(UITapGestureRecognizer *)tapper
 {
+    [self removeGestureRecognizer:tapper];
+    
     int linesNeeded = [self.fullText numberOfLinesNeededWithSize:self.verticalExpandingsizeConstraint oneLineHeight:self.oneLineHeight];
     
     CGRect labelFrame = self.frame;
